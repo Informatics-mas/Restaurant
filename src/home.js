@@ -1,32 +1,35 @@
-function loadHome() {
+export function loadHome() {
   const content = document.getElementById("content");
+  content.innerHTML = "";
 
-  // Card principale
-  const card = document.createElement("div");
-  card.classList.add("rigth"); // attention orthographe
+  const after = document.createElement("div");
+  after.className = "after";
+
+  const rigth = document.createElement("div");
+  rigth.className = "rigth";
+
+  const left = document.createElement("div");
+  left.className = "left";
 
   const title = document.createElement("h1");
-  title.textContent = "Le Gourmet Royal";
+  title.textContent = "BIENVENU AU GOURMET ROYAL ";
 
   const text = document.createElement("p");
   text.textContent =
-    "Bienvenue au Gourmet Royal, où chaque plat est préparé avec passion et des ingrédients frais.";
+    "L’ÉVEIL DES SENS DANS UN ÉCRIN DE LUMIÈRE. UNE ATMOSPHÈRE FEUTRÉE POUR VOS PLUS BEAUX INSTANTS. LE PARTAGE AU CŒUR D'UNE CUISINE D'EXCEPTION. L'ÉLÉGANCE D'UN LIEU OÙ LE TEMPS S'ARRÊTE. UNE IMMERSION TOTALE DANS LE RAFFINEMENT CULINAIRE. VOTRE NOUVELLE ESCALE AU CENTRE DE LA PASSION.";
 
   const button = document.createElement("button");
-  button.textContent = "Reserve - Now";
-
-  // Card secondaire
-  const card1 = document.createElement("div");
-  card1.classList.add("left");
+  button.id ="menuBtn";
+  button.textContent = "Decouvrez notre Menu";
 
   // Ajouter les éléments à la card principale
-  card.appendChild(title);
-  card.appendChild(text);
-  card1.appendChild(button);
+  left.appendChild(title);
+  left.appendChild(text);
+  left.appendChild(button);
 
-  // Ajouter les cards au content
-  content.appendChild(card);
-  content.appendChild(card1);
+  after.appendChild(rigth);
+  after.appendChild(left);
+  content.appendChild(after);
+
 }
 
-export default loadHome;

@@ -1,44 +1,333 @@
 /* styles.css */
-*{
+
+:root {
+  --bg-color: #261B15;
+  /* Ton sombre pour le body */
+  --accent-gold: #F2B85C;
+  /* Pour tes boutons ou titres importants */
+  --text-light: #E6D5B8;
+  /* Pour tes paragraphes */
+  --card-bg: #4A2C1D;
+  /* Pour le fond de tes sections */
+  --white-warm: #F9F3E6;
+  /* Pour les éléments très clairs */
+}
+
+@font-face {
+  font-family: "Ailerons";
+  src: url(./fonts/Ailerons-Typeface.otf);
+}
+
+@font-face {
+  font-family: "monstafectro";
+  src: url(./fonts/MonstaFectro.ttf);
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: oklch(27.9% 0.041 260.031);
+  background-color: var(--bg-color);
+  color: var(--text-light);
 }
 
-header{
-  height: 70px;
+header {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 60px;
   display: flex;
   align-items: center;
-  flex-direction: inline;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 105px;
 }
 
-nav{
-  justify-content: space-between;
+nav button {
+  font-family: monospace;
+  font-size: 19px;
+  padding: 5px 20px;
+  border: 1px solid #efefef;
+  border-radius: 30px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+/* content style */
+
+#content {
+  
+}
+
+#content h1 {
+  font-family: Ailerons;
+  line-height: 2.2;
+  text-align: center;
+  align-content: center;
+  margin-bottom: 30px;
+}
+
+.after {
+  margin-top: 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
   gap: 15px;
 }
 
-#content{
-  background-color: whitesmoke;
+.rigth {
   height: 450px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: inline;
+  width: 450px;
+  background-image: url(/src/Image/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
 }
 
-.rigth{
+.left {
+  width: 600px;
+  height: 450px;
+  align-content: center;
+  margin-left: 15%;
+}
+
+.left h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 24px;
+}
+
+.left p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-style: oblique;
+  text-transform: lowercase;
+}
+
+.left button {
+  margin-top: 20px;
+  margin-left: 50%;
+  font-family: monospace;
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: 2px solid var(--accent-gold);
+  cursor: pointer;
+  font-size: 18px;
   background-color: transparent;
-  height: 400px;
-  width: 670px;
-  padding-left: 3px;
+  color: var(--white-warm);
+  box-shadow: 0 0 20px rgba(232, 176, 89, 0.6);
+  transition: all 0.3s ease;
+}
+
+.left button:hover {
+  border-color: var(--white-warm);
+  /* Bordure couleur flamme */
+  box-shadow: 0 0 20px var(--white-warm);
+  color: #E8B059;
+}
+
+.afters {
+  margin-top: 50px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  justify-content: center;
   align-content: center;
 }
 
-.left{
+.one,
+.two,
+.three,
+.four {
+  display: flex;
+  padding: 10px;
+  align-content: center;
+  width: 550px;
+  height: 250px;
+  border-radius: 10px;
+  border: 1px solid #E6D5B8;
+}
+
+.one .title {
+  width: 250px;
+  height: 250px;
+  background-image: url(/src/Image/plates.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.two .title {
+  width: 250px;
+  height: 250px;
+  background-image: url(/src/Image/plats.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.three .title {
+  width: 250px;
+  height: 250px;
+  background-image: url(/src/Image/plate.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.four .title {
+  width: 250px;
+  height: 250px;
+  background-image: url(/src/Image/plat.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.one .desc {
+  width: 250px;
+  font-family: monospace;
+  font-size: 24px;
+  height: 250px;
+  align-content: center;
+  text-align: center;
+  padding-top: 20%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.two .desc {
+  width: 250px;
+  height: 250px;
+  font-family: monospace;
+  font-size: 24px;
+  align-content: center;
+  text-align: center;
+  padding-top: 20%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.three .desc {
+  width: 250px;
+  height: 250px;
+  font-family: monospace;
+  font-size: 24px;
+  align-content: center;
+  text-align: center;
+  padding-top: 20%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.four .desc {
+  width: 250px;
+  height: 250px;
+  font-family: monospace;
+  font-size: 24px;
+  align-content: center;
+  text-align: center;
+  padding-top: 15%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc button {
+  width: 130px;
+  margin-top: 12px;
+  margin-left: 35%;
+  padding: 5px;
+  border-radius: 12px;
+  border: 2px solid var(--accent-gold);
+  cursor: pointer;
+  font-size: 18px;
+  background-color: transparent;
+  color: var(--white-warm);
+  box-shadow: 0 0 20px rgba(232, 176, 89, 0.6);
+  transition: all 0.3s ease;
+}
+
+.desc button:hover {
+  border-color: var(--white-warm);
+  box-shadow: 0 0 20px var(--white-warm);
+  color: #E8B059;
+}
+
+/* about section start */
+
+.size{
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.img{
+  background-image: url(./Image/chef.png);
+  background-position: center;
+  background-size: cover;
+  width: 35%;
+  border-radius: 50px 0px 50px 0px;
+  height: 500px;
+}
+
+.txt{
+  width: 63%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.txt p{
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.txt button{
+  padding: 5px;
+  border-radius: 12px;
+  border: 2px solid var(--accent-gold);
+  cursor: pointer;
+  font-size: 18px;
+  background-color: transparent;
+  color: var(--white-warm);
+  box-shadow: 0 0 20px rgba(232, 176, 89, 0.6);
+  transition: all 0.3s ease;
+  margin-left: 80%;
+  width: 150px;
+}
+
+.txt button:hover{
+  border-color: var(--white-warm);
+  box-shadow: 0 0 20px var(--white-warm);
+  color: #E8B059;
+}
+
+/*.left{
   height: 400px;
   width: 660px;
   background-image: url(/Image/download\ \(1\).jpeg);
@@ -47,23 +336,9 @@ nav{
   background-size: cover;
   border-radius: 60% 40% 10% 70% / 50% 60% 20% 50%;
   /* haut-gauche | haut-droit | bas-droit | bas-gauche */
-  align-content: center;
+/* align-content: center;
   padding-left: 20px;
   justify-content: space-between;
-}
+}*/
 
-.left button{
-  margin-left: 30px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid rgb(4, 1, 24);
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: transparent;
-}
-
-.left button:hover{
-  background-color: rgba(175, 102, 6, 0.719);
-  transition: ease-in .5s;
-}
+/*.*/
